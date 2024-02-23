@@ -1,6 +1,6 @@
 # Bravo Care QA Engineer Challenge
 
-##### What's this project is about ?
+# What's this project is about ?
 
 This project is part of a hiring process for a QA Engineer position available at Bravo Care.
 It's an E2E test at <a href="https://automationexercise.com/">Automation Exercise</a> that contains the following steps (in order) :
@@ -28,7 +28,7 @@ It's an E2E test at <a href="https://automationexercise.com/">Automation Exercis
 21. Press “OK” in the pop up
 22. Finally, click on the “Logout” button on the header
 
-##### Project Structure
+# Project Structure
 
 1 - Inside the file `cypress.config.js` we set the baseUrl. So that we don't have to keep repeating ourselves with long strings when trying to access the website we want to test. <strong>Do not touch that !</strong>
 
@@ -51,7 +51,7 @@ page of the application. All the pages are being instantiated at the beginning o
 • Google Chrome / Edge / Firefox (whichever browser you prefer, it's 100% up to you) <br>
 • Code editor of your preference (I use VSCode)<br>
 
-##### Setting Up the Project
+# Setting Up the Project
 
 1 - Clone this repository to your local machine (It's up to you to clone it with SSH or HTTPS. If you can't clone it with SSH
 (and you want to do it via SSH) please refer to the documentation <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account"> here </a >) by clicking on the clone button and then clicking on the copy URL button next to the method that you decided to clone
@@ -62,7 +62,7 @@ page of the application. All the pages are being instantiated at the beginning o
 
 • Now you have the project ready to be tested. Let's understand how you can run the tests, configure them according to the data that you want to test, and so on
 
-##### Running the Test Cases
+# Running the Test Cases
 
 - Open the terminal of your choice inside the project's folder. You can use the `test` script created on the package.json file to run the test in headless mode (It will run the tests behind the curtains, this will also generate a video recording with all the actions taken. You can find the video inside the videos folder).
 
