@@ -1,25 +1,25 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('scrollPageHalfwayDown', () => {
+    cy.scrollTo('center')
+})
+
+
+Cypress.Commands.add('clickContinueShopping', () => {
+    cy.get('.modal-footer > .btn').should('be.visible').click()
+})
+
+
+Cypress.Commands.add('viewCartModalClick', () => {
+    cy.get('a[href="/view_cart"] > u').should('be.visible').click()
+})
+
+
+Cypress.Commands.add('registerModalClick', () => {
+    cy.get('a[href="/login"] > u').should('be.visible').click()
+})
+
+
+Cypress.Commands.add('clickCheckOutButton', () => {
+
+    cy.get(".check_out").should('be.visible').click()
+
+})
