@@ -1,0 +1,20 @@
+{
+	"name": "challenge-qa-engineer-bravocare",
+	"version": "1.0.0",
+	"description": "Bravo care QA Engineer challenge",
+	"main": "index.js",
+	"scripts": {
+		"cy:open": "cypress open",
+		"test": "cypress run"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/joaomcruz/challenge-qa-engineer-bravocare.git"
+	},
+	"author": "João Victor",
+	"license": "ISC",
+	"homepage": "https://github.com/joaomcruz/challenge-qa-engineer-bravocare#readme",
+	"devDependencies": {
+		"cypress": "^13.6.6"
+	}
+}
