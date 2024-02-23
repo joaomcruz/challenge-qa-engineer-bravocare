@@ -53,10 +53,10 @@ page of the application. All the pages are being instantiated at the beginning o
 
 # Setting Up the Project
 
-1 - Clone this repository to your local machine (It's up to you to clone it with SSH or HTTPS. If you can't clone it with SSH
-(and you want to do it via SSH) please refer to the documentation <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account"> here </a >) by clicking on the clone button and then clicking on the copy URL button next to the method that you decided to clone
+1 - Clone this repository to your local machine (it's up to you to clone it with SSH or HTTPS. If you can't clone it with SSH
+-and you want to do it via SSH- please refer to the documentation <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account"> here </a >) by clicking on the green `Code` button and then clicking on the copy URL button next to the method that you decided to use for cloning.
 
-2 - Now that you have the URL to clone the project, go to a folder where you keep your GitHub projects (or create a new one ). Now that you have a folder to keep clone the project, open the terminal (gitbash/PowerShell with admin permission) paste the command `git clone copied url` and press enter.
+2 - Now that you have the URL to clone the project, go to a folder where you keep your GitHub projects (or create a new one ). Now that you have a folder to keep the project, open the terminal (GitBash/PowerShell with admin permission) paste the command `git clone git@github.com:joaomcruz/challenge-qa-engineer-bravocare.git` if you're doing it through SSH and press enter. If you want to do it via HTTPS do `git clone https://github.com/joaomcruz/challenge-qa-engineer-bravocare.git` instead.
 
 3 - Open the project's folder(that can be done within the terminal by typing `cd challenge-qa-engineer-bravocare` . If you can't manage to open the folder within the terminal, close the terminal, open it manually via the user interface, and open a terminal inside the project's folder). Now that you're inside the project's folder, with the terminal opened, type the command `npm install`. That's gonna install all of the dependencies needed for the project to work.
 
