@@ -39,7 +39,7 @@ page of the application. All the pages are being instantiated at the beginning o
 - Open the terminal of your choice inside the project's folder. Type `npx cypress run` to run it in headless mode.
   If you want to see the tests running, you can use `npx cypress open` to open the cypress app. Once you open it, click on the "E2E Testing" configured button,
   select the browser of your choice, and click on the "Start E2E Testing in select browser". Then you're going to see the spec(test file) named "Automation_Exercise_Tests".
-  Click on it and it'll trigger the tests automatically.
+  Click on it and it'll trigger the tests automatically. You can also use the scripts that I created for that , you can find them on the `package.json` file. cy:open does the same thing that `npx cypress open` and test does the same things as `npx cypress run`
 
 # Important
 
@@ -49,5 +49,7 @@ page of the application. All the pages are being instantiated at the beginning o
 
     - Change the data you used previously (you only have to change the email)
 
-
 2 - I added CI to this project. So that every time I push something new, it's going to trigger the test cases via GitHub Actions
+
+3 - I'm using mochawesome to create advanced reports. In order to have an advanced/beautiful report in hand, simply use the defined script `mochawesome-merge` after
+running a test . Then open the folder named `mochawesome-report` and then open the mochawesome.html file in your browser. You'll be able to see a very good looking report.

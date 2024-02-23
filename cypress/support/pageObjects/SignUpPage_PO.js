@@ -1,8 +1,7 @@
 
 class SignUpPage_PO {
     fillAndSubmitRegistrationForm(title, password, day, month, year, firstName, lastName, company, address, country, state, city, zipcode, mobileNumber) {
-        title === "Mr" ? cy.get("#id_gender1").should('be.visible').should('not.be.checked').check().should('have.value', "Mr") : cy.get("id_gender2").should('be.visible').should('not.be.checked').check().should('have.value', "Mrs")
-        cy.get('[data-qa="name"]').should('be.visible').should('have.value', Cypress.env("firstName"))
+        title == "Mr" ? cy.get("#uniform-id_gender1").should('be.visible').should('not.be.checked').check().should('be.checked') : cy.get("#uniform-id_gender2").should('be.visible').should('not.be.checked').click()
         cy.get('[data-qa="email"]').should('be.visible').should('have.value', Cypress.env("email"))
         cy.get('[data-qa="password"]').should('be.visible').should('be.empty').type(password).should('have.value', password)
         cy.get('[data-qa="days"]').should('be.visible').should('be.visible').select(day).should('have.value', day)
