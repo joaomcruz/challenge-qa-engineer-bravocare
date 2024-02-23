@@ -2,7 +2,7 @@ class AccountCreated_PO {
 
 
     continueAfterCreatingAccount() {
-        cy.get('[data-qa="continue-button"]').click()
+        cy.get('[data-qa="continue-button"]').should('be.visible').click()
     }
 
 }

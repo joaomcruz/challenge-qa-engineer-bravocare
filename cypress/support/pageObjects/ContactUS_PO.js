@@ -10,10 +10,11 @@ class ContactUS_PO {
 
     acceptPopUp() {
         cy.on('window:confirm', (txt) => {
-            expect(txt).to.contains("Press OK to proceed!");
+            expect(txt).to.be.visible
+            expect(txt).to.have.text("Press OK to proceed!");
         })
-
     }
+
 }
 
 
