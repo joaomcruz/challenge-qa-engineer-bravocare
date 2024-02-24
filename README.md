@@ -3,7 +3,10 @@
 # What's this project is about ?
 
 This project is part of a hiring process for a QA Engineer position available at Bravo Care.
-It's an E2E test at <a href="https://automationexercise.com/">Automation Exercise</a> that contains the following steps (in order) :
+It's an E2E test automated with Cypress.
+The environment at testing is the <a href="https://automationexercise.com/">Automation Exercise</a> website, a playground for QA Engineers who want to put their automation skills into practice.
+
+The test contains the following steps (in order) :
 
 1. Enter the website and scroll down about halfway down the page
 2. Choose a product and click on “View product” under the picture of the product
