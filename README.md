@@ -31,6 +31,14 @@ The test contains the following steps (in order) :
 21. Press “OK” in the pop up
 22. Finally, click on the “Logout” button on the header
 
+
+# Test Plan
+
+It was also asked to create a Test Plan for future tests, considering the project is starting from scratch, where I should think about what needs to be tested and what should be given priority.
+You can find the answer for it here : [Test Plan.docx](https://github.com/joaomcruz/challenge-qa-engineer-bravocare/files/14408685/Test.Plan.docx)
+
+
+
 # Project Structure
 
 1 - Inside the file `cypress.config.js` we set the baseUrl. So that we don't have to keep repeating ourselves with long strings when trying to access the website we want to test. <strong>Do not touch that !</strong>
