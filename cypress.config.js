@@ -8,7 +8,10 @@ module.exports = defineConfig({
   video: true,
   videoCompression: true,
   e2e: {
-    baseUrl: 'https://automationexercise.com/'
+
+    baseUrl: 'https://automationexercise.com/',
+    supportFile: false
   },
+
 
 });

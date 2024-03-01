@@ -1,18 +1,34 @@
-class LoginPage_PO {
+import BasePage_PO from "./BasePage_PO";
+
+class LoginPage_PO extends BasePage_PO {
+
+    constructor() {
+        super();
+    }
+
+    pageElements = {
+        getSignUpNameField: () => cy.get('[data-qa="signup-name"]'),
+        getSignUpEmailField: () => cy.get('[data-qa="signup-email"]'),
+        getSignUpSubmitButton: () => cy.get('[data-qa="signup-button"]'),
+        getLoginEmailField: () => cy.get('[data-qa="login-email"]'),
+        getLoginPasswordField: () => cy.get('[data-qa="login-password"]'),
+        getLoginAccessButton: () => cy.get('[data-qa="login-button"]')
+
+    }
 
     fillFieldsToCreateAccount(name, email) {
-        cy.get('[data-qa="signup-name"]').should('be.visible').should('be.empty').type(name)
-        cy.get('[data-qa="signup-email"]').should('be.visible').should('be.empty').type(email)
+        this.pageElements.getSignUpNameField().should('be.visible').should('be.empty').type(name)
+        this.pageElements.getSignUpEmailField().should('be.visible').should('be.empty').type(email)
     }
 
     clickOnSignUp() {
-        cy.get('[data-qa="signup-button"]').should('be.visible').should('be.enabled').click()
+        this.pageElements.getSignUpSubmitButton().should('be.visible').should('be.enabled').click()
     }
 
     login(email, password) {
-        cy.get('[data-qa="login-email"]').should('be.visible').should('be.empty').type(email)
-        cy.get('[data-qa="login-password"]').should('be.visible').should('be.empty').type(password)
-        cy.get('[data-qa="login-button"]').should('be.visible').click()
+        this.pageElements.getLoginEmailField().should('be.visible').should('be.empty').type(email)
+        this.pageElements.getLoginPasswordField().should('be.visible').should('be.empty').type(password, { log: false })
+        this.pageElements.getLoginAccessButton().should('be.visible').click()
     }
 
 

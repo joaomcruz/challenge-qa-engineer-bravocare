@@ -1,8 +1,13 @@
-class AccountCreated_PO {
+import BasePage_PO from "./BasePage_PO";
 
+class AccountCreated_PO extends BasePage_PO {
+
+    constructor() {
+        super();
+    }
 
     continueAfterCreatingAccount() {
-        cy.get('[data-qa="continue-button"]').should('be.visible').click()
+        this.continueAction()
     }
 
 }

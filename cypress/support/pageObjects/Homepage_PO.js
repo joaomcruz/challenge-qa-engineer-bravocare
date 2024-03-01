@@ -1,6 +1,14 @@
+import BasePage_PO from "./BasePage_PO";
 
+class HomePage_PO extends BasePage_PO {
 
-class HomePage_PO {
+    constructor() {
+        super();
+    }
+
+    pageElements = {
+        getViewProductButtonList: () => cy.get('.choose > .nav > li > a').as("viewProductButtonList")
+    }
 
 
     visitHomePage() {
@@ -8,7 +16,7 @@ class HomePage_PO {
     }
 
     chooseRandomProductToView() {
-        cy.get('.choose > .nav > li > a').as("viewProductButtonList")
+        this.pageElements.getViewProductButtonList()
             .should('be.visible')
             .its('length')
             .then(lengthOfArray => Cypress._.random(0, lengthOfArray - 1))
@@ -16,21 +24,6 @@ class HomePage_PO {
                 cy.get("@viewProductButtonList").eq(randomizedIndex).click()
             })
     }
-
-    clickCartOnTheHeader() {
-        cy.get(".shop-menu > .nav > li > a[href='/view_cart']").click()
-    }
-
-
-    logout() {
-        cy.get(".shop-menu > .nav > li > a[href='/logout']").click()
-    }
-
-
-    clickContactUsOnHeader() {
-        cy.get(".shop-menu > .nav > li > a[href='/contact_us']").click()
-    }
-
 
 }
 

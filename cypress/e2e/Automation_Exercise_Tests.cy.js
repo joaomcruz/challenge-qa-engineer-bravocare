@@ -1,7 +1,9 @@
+import { faker } from '@faker-js/faker'
 import AccountCreated_PO from "../support/pageObjects/AccountCreated_PO"
+import BasePage_PO from "../support/pageObjects/BasePage_PO"
 import CheckOut_PO from "../support/pageObjects/CheckOut_PO"
 import ContactUS_PO from "../support/pageObjects/ContactUS_PO"
-import HomePage_PO from "../support/pageObjects/Homepage_PO"
+import HomePage_PO from "../support/pageObjects/HomePage_PO"
 import LoginPage_PO from "../support/pageObjects/LoginPage_PO"
 import PaymentDone_PO from "../support/pageObjects/PaymentDone_PO"
 import Payment_PO from "../support/pageObjects/Payment_PO"
@@ -21,6 +23,9 @@ describe('E2E - Automation Exercise e-commerce Testing', () => {
   const payment_PO = new Payment_PO()
   const paymentDone_PO = new PaymentDone_PO()
   const contactUS_PO = new ContactUS_PO()
+  const basePage_PO = new BasePage_PO()
+
+
 
   beforeEach(() => {
     homePage_PO.visitHomePage()
@@ -28,7 +33,9 @@ describe('E2E - Automation Exercise e-commerce Testing', () => {
 
 
   it('E2E Testing - Buying a product and Contacting the Company', () => {
-    cy.scrollPageHalfwayDown()
+    const email = faker.internet.email()
+
+    basePage_PO.scrollPageHalfwayDown()
 
     homePage_PO.chooseRandomProductToView()
 
@@ -36,13 +43,13 @@ describe('E2E - Automation Exercise e-commerce Testing', () => {
 
     productDetails_PO.addProductToCart()
 
-    cy.viewCartModalClick()
+    basePage_PO.clickViewCartModal()
 
-    cy.clickCheckOutButton()
+    basePage_PO.clickProceedToCheckOutButton()
 
-    cy.registerModalClick()
+    basePage_PO.clickRegisterModal()
 
-    loginPage_PO.fillFieldsToCreateAccount(Cypress.env("firstName"), Cypress.env("email"))
+    loginPage_PO.fillFieldsToCreateAccount(Cypress.env("firstName"), email)
 
     loginPage_PO.clickOnSignUp()
 
@@ -60,16 +67,19 @@ describe('E2E - Automation Exercise e-commerce Testing', () => {
       Cypress.env("state"),
       Cypress.env("city"),
       Cypress.env("zipcode"),
-      Cypress.env("mobileNumber")
+      Cypress.env("mobileNumber"),
+      email
     )
 
     accountCreated_PO.continueAfterCreatingAccount()
 
-    homePage_PO.clickCartOnTheHeader()
+    basePage_PO.clickCartOnTheHeader()
 
-    cy.clickCheckOutButton()
+    basePage_PO.clickProceedToCheckOutButton()
 
-    checkOut_PO.addCommentAndPlaceOrder(Cypress.env("comment"))
+    checkOut_PO.addComment(Cypress.env("comment"))
+
+    basePage_PO.clickProceedToCheckOutButton()
 
     payment_PO.fillCardInfoAndPayOrder(
       Cypress.env("nameOnCard"),
@@ -81,25 +91,22 @@ describe('E2E - Automation Exercise e-commerce Testing', () => {
 
     paymentDone_PO.continueSuccessfullMessage()
 
-    homePage_PO.logout()
+    basePage_PO.logout()
 
-    loginPage_PO.login(Cypress.env("email"), Cypress.env("password"))
+    loginPage_PO.login(email, Cypress.env("password"))
 
-    homePage_PO.clickContactUsOnHeader()
+    basePage_PO.clickContactUsOnHeader()
 
     contactUS_PO.fillContactUsForm(
       Cypress.env("firstName"),
-      Cypress.env("email"),
+      email,
       Cypress.env("subject"),
       Cypress.env("messageContactUs")
     )
 
-    contactUS_PO.acceptPopUp()
+    basePage_PO.acceptPopUp()
 
-    homePage_PO.logout()
+    basePage_PO.logout()
 
   })
-
-
-
 })

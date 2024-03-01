@@ -3,7 +3,7 @@
 	"reporterOptions": {
 		"reporterEnabled": "mochawesome",
 		"mochawesomeReporterOptions": {
-			"reportDir": "cypress/reports/mochawesome",
+			"reportDir": "cypress/reports",
 			"quite": true,
 			"overwrite": false,
 			"html": false,

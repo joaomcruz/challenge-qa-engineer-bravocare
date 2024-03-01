@@ -1,8 +1,20 @@
-class CheckOut_PO {
+import BasePage_PO from "./BasePage_PO";
 
-    addCommentAndPlaceOrder(message) {
-        cy.get('textarea').should('be.empty').type(message).should('have.value', message)
-        cy.clickCheckOutButton()
+class CheckOut_PO extends BasePage_PO {
+
+    constructor() {
+        super();
+    }
+
+
+    pageElements = {
+        getCommentField: () => cy.get('textarea'),
+    }
+
+
+
+    addComment(message) {
+        this.pageElements.getCommentField().should('be.empty').type(message).should('have.value', message)
     }
 
 

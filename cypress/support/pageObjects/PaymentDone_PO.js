@@ -1,10 +1,14 @@
-class PaymentDone_PO {
+import BasePage_PO from "./BasePage_PO";
 
-    continueSuccessfullMessage() {
-        cy.get('[data-qa="continue-button"]').should('be.visible').click()
+class PaymentDone_PO extends BasePage_PO {
+
+    constructor() {
+        super();
     }
 
-
+    continueSuccessfullMessage() {
+        this.continueAction()
+    }
 
 }
 
