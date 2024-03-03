@@ -1,12 +1,15 @@
-import {
-  AccountCreated_PO,
-  BasePage_PO, CheckOut_PO,
-  ContactUS_PO, HomePage_PO,
-  LoginPage_PO, PaymentDone_PO,
-  Payment_PO, ProductDetails_PO,
-  SignUpPage_PO
-} from "..\support\pageObjects"
 import { faker } from '@faker-js/faker'
+import AccountCreated_PO from "../support/pageObjects/AccountCreated_PO.js"
+import BasePage_PO from "../support/pageObjects/BasePage_PO.js"
+import CheckOut_PO from "../support/pageObjects/CheckOut_PO.js"
+import ContactUS_PO from "../support/pageObjects/ContactUS_PO.js"
+import HomePage_PO from "../support/pageObjects/HomePage_PO.js"
+import LoginPage_PO from "../support/pageObjects/LoginPage_PO.js"
+import PaymentDone_PO from "../support/pageObjects/PaymentDone_PO.js"
+import Payment_PO from "../support/pageObjects/Payment_PO.js"
+import ProductDetails_PO from "../support/pageObjects/ProductDetails_PO.js"
+import SignUpPage_PO from "../support/pageObjects/SignUpPage_PO.js"
+
 
 
 /// <reference types="cypress" />
