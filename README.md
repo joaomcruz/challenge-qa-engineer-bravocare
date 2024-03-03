@@ -75,7 +75,7 @@ page of the application. All the pages are being instantiated at the beginning o
 
 # Running the Test Cases
 
-- Open the terminal of your choice inside the project's folder. You can use the `test` script created on the package.json file to run the test in headless mode (It will run the tests behind the curtains, this will also generate a video recording with all the actions taken. You can find the video inside the videos folder).
+- Open the terminal of your choice inside the project's folder. You can use the `test-with-reports` script created on the package.json file to run the test in headless mode (It will run the tests behind the curtains, this will also generate a video recording with all the actions taken. You can find the video inside the videos folder. It's also going to generate a detailed report in JSON and generate one in HTML so that we can better visualize them).
 
 - If you want to see the tests running, you can use the script `cy:open` to open the cypress app. Once you open it, click on the "E2E Testing" configured button,
   select the browser of your choice, and click on the "Start E2E Testing in select browser". Then you're going to see the spec(test file) named "Automation_Exercise_Tests".
@@ -83,15 +83,5 @@ page of the application. All the pages are being instantiated at the beginning o
 
 # Important
 
-1 - Once you run the test case once, you'll have two options to run the test case again :
+1 - I added CI to this project. So that every time I push something new, it's going to trigger the test cases via GitHub Actions
 
-    - Login manually in the application and delete the user you used
-
-    - Change the data you used previously (you only have to change the email)
-
-2 - I added CI to this project. So that every time I push something new, it's going to trigger the test cases via GitHub Actions
-
-3 - I'm using mochawesome to create advanced reports. To have an advanced/beautiful report in hand, simply use the defined script `mochawesome-merge` after
-running a test. Then open the folder named `mochawesome-report` and then open the mochawesome.html file in your browser. You'll be able to see a very good-looking report.
-You can also delete the reports you have with the `delete-results` script. It's also possible to run the `cypress-regression-pack` script that deletes all the reports,
-triggers the tests and merges the generated reports.
