@@ -31,13 +31,10 @@ The test contains the following steps (in order) :
 21. Press “OK” in the pop up
 22. Finally, click on the “Logout” button on the header
 
-
 # Test Plan
 
 It was also asked to create a Test Plan for future tests, considering the project is starting from scratch, where I should think about what needs to be tested and what should be given priority.
 You can find the answer for it here : [Test Plan.docx](https://github.com/joaomcruz/challenge-qa-engineer-bravocare/files/14408685/Test.Plan.docx)
-
-
 
 # Project Structure
 
@@ -80,8 +77,3 @@ page of the application. All the pages are being instantiated at the beginning o
 - If you want to see the tests running, you can use the script `cy:open` to open the cypress app. Once you open it, click on the "E2E Testing" configured button,
   select the browser of your choice, and click on the "Start E2E Testing in select browser". Then you're going to see the spec(test file) named "Automation_Exercise_Tests".
   Click on it and it'll trigger the tests automatically.
-
-# Important
-
-1 - I added CI to this project. So that every time I push something new, it's going to trigger the test cases via GitHub Actions
-
